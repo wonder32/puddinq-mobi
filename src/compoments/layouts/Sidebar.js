@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
+import * as FaIcons from "react-icons/fa";
 
 
 const Sidebar = (props) => {
@@ -11,12 +12,12 @@ const Sidebar = (props) => {
     return (
         <SidebarContainer>
             <div className={sidebar ? 'nav-menu active' : 'nav-menu'}>
-                <div className={sidebar ? 'toggle-sidebar active' : 'toggle-sidebar'}  onClick={showSidebar}>x</div>
+                <div className={sidebar ? 'toggle-sidebar active' : 'toggle-sidebar'}  onClick={showSidebar}>
+                    <FaIcons.FaBars />
+                </div>
                 <div className="sidebar-header">
                     <h3>Layers</h3>
                 </div>
-
-
             </div>
         </SidebarContainer>
     );
@@ -44,6 +45,7 @@ const SidebarContainer = styled.div`
 .toggle-sidebar {
     position: relative;
     left: 250px;
+    top: 400px;
     width:40px;
     height:40px;
     text-align: right;
@@ -51,9 +53,13 @@ const SidebarContainer = styled.div`
     background-color: white;
     border-radius: 0 5px 5px 0;
     transition: 0.5s;
+    padding-top: 7px;
 }
 
-.toggle-sidebar.active {
-    left: 250px;
-}
+@media (min-width: 1000px) {
+    .nav-menu {
+    left: -220px;
+} 
+
+
 `;
