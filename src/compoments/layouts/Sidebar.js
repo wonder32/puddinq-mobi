@@ -36,6 +36,7 @@ const SidebarContainer = styled.div`
     width: 250px;
     left: -250px;
     padding-top: 61px;
+    z-index: 4;
 }
 
 .nav-menu.active {
