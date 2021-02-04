@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Navbar, Nav} from 'react-bootstrap';
 import styled from 'styled-components';
 import {NavLink} from 'react-router-dom';
@@ -8,8 +8,8 @@ const Navigation = () => {
 
     return (
         <NavigationContainer>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="mr-auto">
-                <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="mr-auto head-menu">
+                <Navbar.Brand href="#home">Puddinq &copy;</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
@@ -27,6 +27,8 @@ export default Navigation;
 
 const NavigationContainer = styled.div`
 
-
+.head-menu {
+    z-index: 5;
+}
 
 `;

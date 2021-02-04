@@ -12,18 +12,6 @@ div#root {
     height:100%
 }
 
-.container-fluid {
-    height: fit-content;
-}
-
-@media (min-width: 992px) {
-    .container-fluid {
-        height: calc(100vh - 56px);
-    }
-}
-
-
-
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -33,6 +21,7 @@ body {
 }
 
 
-.home-main-container {
-    background: url(./grass.jpeg) no-repeat center center/cover;
+body {
+    background-image: url(./grass.jpeg);
+    background-size: cover;
 }

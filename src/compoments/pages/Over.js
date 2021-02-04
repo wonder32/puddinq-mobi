@@ -10,11 +10,13 @@ const Over = () => {
                 <div className="col-lg">
                     <div className="block-content">
                         <h2 className="display-5 text-uppercase py-5 text-center">
-                            puddinq.mobi - opendata kadaster
+                            Over
                         </h2>
-                        <p>Deze online applicatie gebruikt officieële openbare overheidsdata (opendata) in een handige</p>
-                        combinatie zodat u voor het opgegeven adres makkelijk luhtfoto's van de afgelopen jaren, kadaster
-                        grenzen, bebouwingsgrenzen en ter inzage liggende vergunningen kan inzien.
+                        <p>
+                            Deze website permanent beta status als speeltuin voor mijzelf en geïnteresseerden. Aan de
+                            inhoud van de website kunnen geen rechten worden verleend en er wordt gebuik gemaakt van
+                            functionele coockies om het gedrag te volgen en daarmee het gebruik te verbeteren.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -22,7 +24,19 @@ const Over = () => {
                 <div className="col-lg">
                     <div className="block-content">
                         <h2 className="display-5 text-uppercase py-5 text-center">
-                            puddinq.mobi - opendata kadaster
+                            Vergunningen
+                        </h2>
+                        <p>Als een vergunning wordt aangevraagd en goedgekeurd dient deze 6 weken publiek beschikbaar te
+                            zijn om belanghebbended de gelegenheid te geven bezwaar te maken (WRO). Tijdens deze 6 weken
+                            zijn de vergunningen per locatie weergegeven in de kaart. Handig dus om in één oogopslag
+                            regelmatig de vergunningsaanvragen in de buurt in te zien.
+                        </p>
+                    </div>
+                </div>
+                <div className="col-lg">
+                    <div className="block-content">
+                        <h2 className="display-5 text-uppercase py-5 text-center">
+                            PDok
                         </h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi corporis culpa
                             eaque, et
@@ -34,19 +48,7 @@ const Over = () => {
                 <div className="col-lg">
                     <div className="block-content">
                         <h2 className="display-5 text-uppercase py-5 text-center">
-                            puddinq.mobi - opendata kadaster
-                        </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi corporis culpa
-                            eaque, et
-                            expedita in laboriosam minus quam! Adipisci alias, atque autem consectetur consequuntur, ea
-                            eius est,
-                            libero natus nobis odit soluta vero. Dicta ducimus nostrum omnis tempore vitae.</p>
-                    </div>
-                </div>
-                <div className="col-lg">
-                    <div className="block-content">
-                        <h2 className="display-5 text-uppercase py-5 text-center">
-                            puddinq.mobi - opendata kadaster
+                            Kadaster
                         </h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi corporis culpa
                             eaque, et
