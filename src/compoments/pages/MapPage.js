@@ -14,9 +14,10 @@ const MapPage = () => {
 
     return (
         <>
-            <Sidebar/>
+
             <MapContainer>
                 <Map center={fromLonLat(center)} zoom={zoom}>
+                    <Sidebar/>
                     <Layers>
                         <TileLayer
                             source={osm()}
