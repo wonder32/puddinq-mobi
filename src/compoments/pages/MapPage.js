@@ -5,7 +5,7 @@ import Map from "../Map/Map";
 import {osm} from "../Source";
 import {Layers, TileLayer} from "../Layers";
 import {fromLonLat, get} from 'ol/proj';
-import {Controls, FullScreenControl} from "../Controls";
+import {Controls, FullScreenControl, GeoCoderControl} from "../Controls";
 
 const MapPage = () => {
 
@@ -25,7 +25,8 @@ const MapPage = () => {
                         />
                     </Layers>
                     <Controls>
-                        <FullScreenControl />
+                        <FullScreenControl/>
+                        <GeoCoderControl/>
                     </Controls>
                 </Map>
             </MapContainer>
@@ -47,5 +48,38 @@ const MapContainer = styled.div`
     
     #map {
         height:100%;
+    }
+    
+    .ol-control button { 
+        background-color: rgba(40, 40, 40, 0.8) !important;
+    }
+    .ol-control button:hover { 
+        background-color: rgba(40, 40, 40, 1) !important;
+    }
+    
+    @media (max-width: 800px) {
+        .ol-control button {
+            margin: 5px;
+            font-size: 1.7em;
+        }
+        
+        .ol-geo-decoder button {
+        }
+        
+        .ol-geocoder.gcd-gl-container {
+            top: 6.875em;
+        }
+        .ol-geocoder .gcd-gl-control {
+            width: 2.7em;
+            height: 2.7em;
+        }
+        
+        .ol-geocoder .gcd-gl-control input{
+            margin-left: 10px;
+        }
+        .ol-geocoder .gcd-gl-expanded {
+            width: 16.15em;
+            height: 2.7em;
+        }
     }
 `;
