@@ -18,6 +18,18 @@ const Sidebar = (props) => {
                 <div className="sidebar-header">
                     <h3>Layers</h3>
                 </div>
+
+                <div className="sidebar-header">
+                    <h3>Sharing</h3>
+                </div>
+
+                <div className="sidebar-header">
+                    <h3>Over</h3>
+                </div>
+                <p>
+                    puddinq.mobi biedt een handzame gebundelde versie van opensource en opdata gegevens van luchtfoto's,
+                    landkaarten, kadaster- en bebouwingsgrenzen, bebouwingshoogtes en vergunningen.
+                </p>
             </div>
         </SidebarContainer>
     );
@@ -35,7 +47,7 @@ const SidebarContainer = styled.div`
     top: 0;
     width: 250px;
     left: -250px;
-    padding-top: 61px;
+    padding: 61px 17px 17px 17px;
     z-index: 4;
 }
 
@@ -45,7 +57,7 @@ const SidebarContainer = styled.div`
 
 .toggle-sidebar {
     position: relative;
-    left: 250px;
+    left: 233px;
     top: 400px;
     width:40px;
     height:40px;

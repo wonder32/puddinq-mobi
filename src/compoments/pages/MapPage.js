@@ -1,16 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from "styled-components";
 import Sidebar from "../layouts/Sidebar";
 import Map from "../Map/Map";
 import {osm} from "../Source";
-import {Layers, TileLayer} from "../Layers";
-import {fromLonLat, get} from 'ol/proj';
+import {Layers, TileLayer, Aerial} from "../Layers";
+import {fromLonLat} from 'ol/proj';
 import {Controls, FullScreenControl, GeoCoderControl} from "../Controls";
 
 const MapPage = () => {
 
-    const [center, setCenter] = useState([5.121420, 52.090736]);
-    const [zoom, setZoom] = useState(16);
+    const center =[5.121420, 52.090736];
+    const zoom = 16;
 
     return (
         <>
@@ -23,6 +23,26 @@ const MapPage = () => {
                             source={osm()}
                             zIndex={0}
                         />
+                        <Aerial
+                            name='Infrarood 2016'
+                            description='PDOK luchtfotos infrarood 2016'
+                            zIndex={1}
+                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/infrarood/wms'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2016_ortho25IR'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
+                            name='Luchtfoto 2016'
+                            description='PDOK luchtfotos rgb 2016'
+                            zIndex={2}
+                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wms'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2016_ortho25'
+                            srs='EPSG:3857'
+                    />
                     </Layers>
                     <Controls>
                         <FullScreenControl/>

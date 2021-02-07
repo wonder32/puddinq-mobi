@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import MapContext from "../Map/MapContext";
-import OLTileLayer from "ol/layer/Tile";
+import {Tile} from "ol/layer";
 
 
 const TileLayer = ({ source, zIndex = 0 }) => {
@@ -10,7 +10,7 @@ const TileLayer = ({ source, zIndex = 0 }) => {
     useEffect(() => {
         if (!map) return;
 
-        let tileLayer = new OLTileLayer({
+        let tileLayer = new Tile({
             source,
             zIndex,
         });
@@ -22,7 +22,8 @@ const TileLayer = ({ source, zIndex = 0 }) => {
                 map.removeLayer(tileLayer);
             }
         };
-    }, [map]);
+    },
+        [map])
 
     return null;
 };
