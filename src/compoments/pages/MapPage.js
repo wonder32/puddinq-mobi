@@ -17,9 +17,11 @@ const MapPage = () => {
 
             <MapContainer>
                 <Map center={fromLonLat(center)} zoom={zoom}>
-                    <Sidebar/>
+
                     <Layers>
                         <TileLayer
+                            name='Kaart'
+                            description='Kaartgegevens afkomstig van de open street map'
                             source={osm()}
                             zIndex={0}
                         />
@@ -44,6 +46,7 @@ const MapPage = () => {
                             srs='EPSG:3857'
                     />
                     </Layers>
+                    <Sidebar/>
                     <Controls>
                         <FullScreenControl/>
                         <GeoCoderControl/>

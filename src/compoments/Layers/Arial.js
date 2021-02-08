@@ -26,7 +26,7 @@ const Aerial = ({ zIndex = 0, url, service, request, layers, srs, name, descript
                     'srs': srs
                 }
             }),
-            visible: true
+            visible: false
         });
         map.addLayer(tileLayer);
         tileLayer.setZIndex(zIndex);
