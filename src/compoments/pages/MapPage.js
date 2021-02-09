@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Sidebar from "../layouts/Sidebar";
 import Map from "../Map/Map";
 import {osm} from "../Source";
-import {Layers, TileLayer, Aerial} from "../Layers";
+import {Layers, TileLayer, Aerial, Bing, Roads} from "../Layers";
 import {fromLonLat} from 'ol/proj';
 import {Controls, FullScreenControl, GeoCoderControl} from "../Controls";
 
@@ -44,7 +44,93 @@ const MapPage = () => {
                             request='GetMap'
                             layers='2016_ortho25'
                             srs='EPSG:3857'
-                    />
+                        />
+                        <Aerial
+                            name='Infrarood 2017'
+                            description='PDOK luchtfotos infrarood 2017'
+                            zIndex={3}
+                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/infrarood/wms'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2017_ortho25IR'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
+                            name='Luchtfoto 2017'
+                            description='PDOK luchtfotos rgb 2017'
+                            zIndex={4}
+                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wms'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2017_ortho25'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
+                            name='Infrarood 2018'
+                            description='PDOK luchtfotos infrarood 2018'
+                            zIndex={5}
+                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/infrarood/wms'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2018_ortho25IR'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
+                            name='Luchtfoto 2018'
+                            description='PDOK luchtfotos rgb 2018'
+                            zIndex={6}
+                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wms'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2018_ortho25'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
+                            name='Infrarood 2019'
+                            description='PDOK luchtfotos infrarood 2019'
+                            zIndex={7}
+                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/infrarood/wms'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2019_ortho25IR'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
+                            name='Luchtfoto 2019'
+                            description='PDOK luchtfotos rgb 2019'
+                            zIndex={8}
+                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wms'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2019_ortho25'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
+                            name='Hoogtes 0.5m/px'
+                            description='0.5 meter per pixel'
+                            zIndex={10}
+                            url='https://geodata.nationaalgeoregister.nl/ahn3/wms'
+                            service='WMS'
+                            request='GetMap'
+                            layers='ahn3_05m_dsm'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
+                            name='Hoogtes 5m/px'
+                            description='5 meter per pixel'
+                            zIndex={11}
+                            url='https://geodata.nationaalgeoregister.nl/ahn1/wms'
+                            service='WMS'
+                            request='GetMap'
+                            layers='ahn1_5m'
+                            srs='EPSG:3857'
+                        />
+                        <Bing
+                            zIndex={11}
+                        />
+                        {/*<Roads*/}
+                        {/*    zIndex={12}*/}
+                        {/*    />*/}
                     </Layers>
                     <Sidebar/>
                     <Controls>
