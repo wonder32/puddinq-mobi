@@ -14,8 +14,8 @@ const Navigation = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link href="/" exact to="/" as={NavLink}>Home</Nav.Link>
-                        <Nav.Link href="/map" exact to="/map" as={NavLink}>Map</Nav.Link>
-                        <Nav.Link href="/over" exact to="/over" as={NavLink}>Over</Nav.Link>
+                        <Nav.Link href="/map/" exact to="/map/" as={NavLink}>Map</Nav.Link>
+                        <Nav.Link href="/over/" exact to="/over/" as={NavLink}>Over</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

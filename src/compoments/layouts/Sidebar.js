@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import * as FaIcons from "react-icons/fa";
 import MapContext from "../Map/MapContext";
+import {toPng} from 'html-to-image';
 
 const Sidebar = (props) => {
 
@@ -10,6 +11,30 @@ const Sidebar = (props) => {
     const showSidebar = () => setSidebar(!sidebar);
 
     const { map } = useContext(MapContext);
+
+    useEffect(() => {
+        if (!map) return;
+
+        var exportOptions = {
+            filter: function(element) {
+                return true;
+            }
+        };
+
+        document.getElementById('export-png').addEventListener('click', function() {
+            map.once('rendercomplete', function() {
+                toPng(map.getTargetElement(), exportOptions)
+                    .then(function(dataURL) {
+                        let link = document.getElementById('image-download');
+                        link.href = dataURL;
+                        link.click();
+                    });
+            });
+            map.renderSync();
+        });
+
+        return () => {};
+    }, [map])
 
     useEffect(() => {
         if (!map) return;
@@ -53,9 +78,10 @@ const Sidebar = (props) => {
 
     return (
         <SidebarContainer>
-            <div className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+            <div className={sidebar ? 'nav-menu active' : 'nav-menu'} id='sidebar'>
                 <div className={sidebar ? 'toggle-sidebar active' : 'toggle-sidebar'}  onClick={showSidebar}>
-                    <FaIcons.FaBars />
+                    <FaIcons.FaArrowRight className='in' />
+                    <FaIcons.FaArrowLeft className='out' />
                 </div>
                 <div className="sidebar-header">
                     <h3>Layers</h3>
@@ -68,13 +94,13 @@ const Sidebar = (props) => {
                     <h3>Sharing</h3>
                 </div>
 
-                <div className="sidebar-header">
-                    <h3>Over</h3>
-                </div>
-                <p>
-                    puddinq.mobi biedt een handzame gebundelde versie van opensource en opdata gegevens van luchtfoto's,
-                    landkaarten, kadaster- en bebouwingsgrenzen, bebouwingshoogtes en vergunningen.
-                </p>
+                <a href="#share" id="share-link">
+                <FaIcons.FaWhatsapp className='whatsapp' size='2em' />
+                </a>
+                <a id="image-download" href="#download" download="map.png"> </a>
+                <FaIcons.FaCamera className='camera' size='2em' id='export-png' />
+
+
             </div>
         </SidebarContainer>
     );
@@ -113,11 +139,45 @@ const SidebarContainer = styled.div`
     transition: 0.5s;
     padding-top: 7px;
 }
+.toggle-sidebar .out {
+    display: none;
+}
+.toggle-sidebar .in {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.toggle-sidebar.active .out {
+    display: inline-block;
+    margin-left: 10px;
+}
+.toggle-sidebar.active .in {
+    display: none;
+}
+
+.whatsapp,
+.camera {
+    cursor: pointer;
+}
+
+.camera {
+        display: none;
+}
+.whatsapp {
+    fill: green;
+    margin-right: 8px;
+}
 
 @media (min-width: 1000px) {
     .nav-menu {
-    left: -220px;
-} 
+        left: -220px;
+    }
+}
 
+@media (min-width: 730px) {
+    .camera {
+        display: inline-block;
+    } 
+}
 
 `;

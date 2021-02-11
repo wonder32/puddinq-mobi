@@ -9,14 +9,30 @@ import {Controls, FullScreenControl, GeoCoderControl} from "../Controls";
 
 const MapPage = () => {
 
-    const center =[5.121420, 52.090736];
-    const zoom = 16;
+    let center =[5.121420, 52.090736];
+    let zoom = 16;
+    let rotation = 0;
+
+    if (window.location.hash !== '') {
+        // try to restore center, zoom-level and rotation from the URL
+        let hash = window.location.hash.replace('#map=', '');
+        let parts = hash.split('/');
+        console.table(parts);
+    //     if (parts.length === 4) {
+    //         zoom = parseInt(parts[0], 10);
+    //         center = [
+    //             parseFloat(parts[1]),
+    //             parseFloat(parts[2])
+    //         ];
+    //         rotation = parseFloat(parts[3]);
+    //     }
+    }
 
     return (
         <>
 
             <MapContainer>
-                <Map center={fromLonLat(center)} zoom={zoom}>
+                <Map center={fromLonLat(center)} zoom={zoom} rotation={rotation}>
 
                     <Layers>
                         <TileLayer
