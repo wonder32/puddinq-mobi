@@ -16,9 +16,12 @@ const Sidebar = (props) => {
 
         /* input toggle layers*/
         function bindInputs(layerid, layer) {
-            let visibilityInput = document.getElementById(layerid);
+            let visibilityInput = document.getElementById('visible' + layerid);
+            let visibilityOpacity = document.getElementById('slider' + layerid);
             visibilityInput.addEventListener('change', function() {
                 layer.setVisible(this.checked);
+                let sliderVisibility = this.checked ? 'block' : 'none';
+                visibilityOpacity.style.display = sliderVisibility;
                 map.getView().animate({
                         zoom: 19
                     }
@@ -34,7 +37,15 @@ const Sidebar = (props) => {
             layerList.insertAdjacentHTML('beforeend', '<li><label id="layer' + i + '" class="checkbox" for="visible'
                 + i + '"><input id="visible' + i + '" class="visible mapcheckbox" type="checkbox"> ' + name +
                 '</label><input id="slider' + i + '" type="range" min="0" max="1" step="0.1" value="1" class="shifter" style="display:none">');
-            bindInputs('visible' + i, layer);
+            bindInputs(i, layer);
+        });
+
+        map.getLayers().forEach(function(layer, i) {
+            let opacity = document.getElementById("slider" + i);
+            opacity.addEventListener("change", function () {
+                console.log(this.value);
+                layer.setOpacity(parseFloat(this.value))
+            }, false);
         });
 
         return () => {};

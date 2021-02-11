@@ -128,9 +128,9 @@ const MapPage = () => {
                         <Bing
                             zIndex={11}
                         />
-                        {/*<Roads*/}
-                        {/*    zIndex={12}*/}
-                        {/*    />*/}
+                        <Roads
+                            zIndex={12}
+                            />
                     </Layers>
                     <Sidebar/>
                     <Controls>
