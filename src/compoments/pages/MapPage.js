@@ -18,21 +18,21 @@ const MapPage = () => {
         let hash = window.location.hash.replace('#map=', '');
         let parts = hash.split('/');
         console.table(parts);
-    //     if (parts.length === 4) {
-    //         zoom = parseInt(parts[0], 10);
-    //         center = [
-    //             parseFloat(parts[1]),
-    //             parseFloat(parts[2])
-    //         ];
-    //         rotation = parseFloat(parts[3]);
-    //     }
+        if (parts.length === 4) {
+            zoom = parseInt(parts[0], 10);
+            center = [
+                parseFloat(parts[1]),
+                parseFloat(parts[2])
+            ];
+            rotation = parseFloat(parts[3]);
+        }
     }
 
     return (
         <>
 
             <MapContainer>
-                <Map center={fromLonLat(center)} zoom={zoom} rotation={rotation}>
+                <Map center={center} zoom={zoom} rotation={rotation}>
 
                     <Layers>
                         <TileLayer
