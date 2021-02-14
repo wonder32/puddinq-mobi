@@ -10,7 +10,7 @@ const Sidebar = (props) => {
 
     const showSidebar = () => setSidebar(!sidebar);
 
-    const { map } = useContext(MapContext);
+    const {map} = useContext(MapContext);
 
     useEffect(() => {
         if (!map) return;
@@ -33,7 +33,8 @@ const Sidebar = (props) => {
             map.renderSync();
         });
 
-        return () => {};
+        return () => {
+        };
     }, [map])
 
     useEffect(() => {
@@ -67,38 +68,38 @@ const Sidebar = (props) => {
 
         map.getLayers().forEach(function(layer, i) {
             let opacity = document.getElementById("slider" + i);
-            opacity.addEventListener("change", function () {
-                console.log(this.value);
+            opacity.addEventListener("change", function() {
                 layer.setOpacity(parseFloat(this.value))
             }, false);
         });
 
-        return () => {};
+        return () => {
+        };
     }, [map])
 
     return (
         <SidebarContainer>
             <div className={sidebar ? 'nav-menu active' : 'nav-menu'} id='sidebar'>
-                <div className={sidebar ? 'toggle-sidebar active' : 'toggle-sidebar'}  onClick={showSidebar}>
-                    <FaIcons.FaArrowRight className='in' />
-                    <FaIcons.FaArrowLeft className='out' />
+                <div className={sidebar ? 'toggle-sidebar active' : 'toggle-sidebar'} onClick={showSidebar}>
+                    <FaIcons.FaSlidersH className='in'/>
+                    <FaIcons.FaArrowLeft className='out'/>
                 </div>
-                <div className="sidebar-header">
-                    <h3>Layers</h3>
+                <div className="sidebar-content">
+                    <div className="sidebar-header">
+                        <h3>Layers</h3>
+                    </div>
+
+                    <ul id="layer-list">
+                    </ul>
                 </div>
-
-                <ul id="layer-list">
-                </ul>
-
                 <div className="sidebar-header">
                     <h3>Sharing</h3>
                 </div>
-
                 <a href="#share" id="share-link">
-                <FaIcons.FaWhatsapp className='whatsapp' size='2em' />
+                    <FaIcons.FaWhatsapp className='whatsapp' size='2em'/>
                 </a>
                 <a id="image-download" href="#download" download="map.png"> </a>
-                <FaIcons.FaCamera className='camera' size='2em' id='export-png' />
+                <FaIcons.FaCamera className='camera' size='2em' id='export-png'/>
 
 
             </div>
@@ -122,6 +123,31 @@ const SidebarContainer = styled.div`
     z-index: 4;
 }
 
+.sidebar-content {
+    position: relative;
+    top: -35px;
+    overflow-y: scroll;
+    height: 70vh;
+}
+.sidebar-content::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+.sidebar-content::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.0);
+    border-radius: 5px;
+    background-color: #F5F5F5;
+}
+
+.sidebar-content::-webkit-scrollbar-thumb
+{
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.0);
+    background-color: #555;
+}
+
 .nav-menu.active {
     left: 0px;
 }
@@ -138,6 +164,7 @@ const SidebarContainer = styled.div`
     border-radius: 0 5px 5px 0;
     transition: 0.5s;
     padding-top: 7px;
+    
 }
 .toggle-sidebar .out {
     display: none;

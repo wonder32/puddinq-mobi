@@ -3,13 +3,12 @@ import styled from "styled-components";
 import Sidebar from "../layouts/Sidebar";
 import Map from "../Map/Map";
 import {osm} from "../Source";
-import {Layers, TileLayer, Aerial, Bing, Roads} from "../Layers";
-import {fromLonLat} from 'ol/proj';
+import {Layers, TileLayer, Aerial, Bing, Roads, Kadaster, Buildings, Permits, Popup} from "../Layers";
 import {Controls, FullScreenControl, GeoCoderControl} from "../Controls";
 
 const MapPage = () => {
 
-    let center =[5.121420, 52.090736];
+    let center =[570811.17, 6814781.96];
     let zoom = 16;
     let rotation = 0;
 
@@ -17,7 +16,7 @@ const MapPage = () => {
         // try to restore center, zoom-level and rotation from the URL
         let hash = window.location.hash.replace('#map=', '');
         let parts = hash.split('/');
-        console.table(parts);
+
         if (parts.length === 4) {
             zoom = parseInt(parts[0], 10);
             center = [
@@ -147,6 +146,16 @@ const MapPage = () => {
                         <Roads
                             zIndex={12}
                             />
+                        <Kadaster
+                            zIndex={13}
+                            />
+                        <Buildings
+                            zIndex={14}
+                            />
+                        <Permits
+                            zIndex={15}
+                        />
+                        <Popup />
                     </Layers>
                     <Sidebar/>
                     <Controls>
