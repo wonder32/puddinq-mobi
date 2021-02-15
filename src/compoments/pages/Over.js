@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
-
+import luchtfoto from '../../images/luchtfoto.PNG';
+import panden from '../../images/panden.PNG';
+import permits from "../../images/vergunningen.PNG";
 
 const Over = () => {
 
@@ -14,7 +16,7 @@ const Over = () => {
                         </h2>
                         <p>
                             Deze website permanent beta status als speeltuin voor mijzelf en geïnteresseerden. Aan de
-                            inhoud van de website kunnen geen rechten worden verleend en er wordt gebuik gemaakt van
+                            inhoud van de website kunnen geen rechten worden verleend en er wordt alleen gebuik gemaakt van
                             functionele coockies om het gedrag te volgen en daarmee het gebruik te verbeteren.
                         </p>
                     </div>
@@ -24,37 +26,34 @@ const Over = () => {
                 <div className="col-lg">
                     <div className="block-content">
                         <h2 className="display-5 text-uppercase py-5 text-center">
+                            PDOK
+                        </h2>
+                        <p>Een grootdeel van de gegevens is afkomstig van PDOK, dit is een digitale data service die de
+                            toegankelijkheid van overheidsinformatie faciliteert. De luchtfato's zijn er van verschillende
+                            jaren waardoor ook beperkt historische analyses gemaakt kunnen worden.
+                        </p>
+                        <img src={luchtfoto} className="rounded img-fluid" alt="voorbeeld vergunningen" />
+                    </div>
+                </div>
+                <div className="col-lg">
+                    <div className="block-content">
+                        <h2 className="display-5 text-uppercase py-5 text-center">
                             Vergunningen
                         </h2>
-                        <p>Als een vergunning wordt aangevraagd en goedgekeurd dient deze 6 weken publiek beschikbaar te
-                            zijn om belanghebbended de gelegenheid te geven bezwaar te maken (WRO). Tijdens deze 6 weken
-                            zijn de vergunningen per locatie weergegeven in de kaart. Handig dus om in één oogopslag
-                            regelmatig de vergunningsaanvragen in de buurt in te zien.
+                        <p>De vergunningen komen ook van de overheid, en de links naar de publicaties (of gegevens daarover)
+                            komen ook uit bij de overheid.
                         </p>
+                        <img src={permits} className="rounded img-fluid" alt="voorbeeld vergunningen" />
                     </div>
                 </div>
                 <div className="col-lg">
                     <div className="block-content">
                         <h2 className="display-5 text-uppercase py-5 text-center">
-                            PDok
+                            Panden
                         </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi corporis culpa
-                            eaque, et
-                            expedita in laboriosam minus quam! Adipisci alias, atque autem consectetur consequuntur, ea
-                            eius est,
-                            libero natus nobis odit soluta vero. Dicta ducimus nostrum omnis tempore vitae.</p>
-                    </div>
-                </div>
-                <div className="col-lg">
-                    <div className="block-content">
-                        <h2 className="display-5 text-uppercase py-5 text-center">
-                            Kadaster
-                        </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi corporis culpa
-                            eaque, et
-                            expedita in laboriosam minus quam! Adipisci alias, atque autem consectetur consequuntur, ea
-                            eius est,
-                            libero natus nobis odit soluta vero. Dicta ducimus nostrum omnis tempore vitae.</p>
+                        <p>De panden komen overeen met de BAG registratie.
+                        </p>
+                        <img src={panden} className="rounded img-fluid" alt="voorbeeld vergunningen" />
                     </div>
                 </div>
             </div>
@@ -70,6 +69,10 @@ export default Over;
 const OverContainer = styled.div`
 h2 {
     color: var(--black);
+}
+
+.row {
+    margin:0;
 }
 
 .block-content {

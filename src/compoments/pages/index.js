@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
+import combinationOne from '../../images/combinatie-een.PNG';
+import combinationTwo from '../../images/combinatie-twee.PNG';
+import kadaster from '../../images/kadaster.PNG';
+import hights from '../../images/hoogtes.PNG';
+import permits from '../../images/vergunningen.PNG';
 
 
 const Home = () => {
@@ -10,12 +15,13 @@ const Home = () => {
             <div className="row">
                 <div className="col-lg">
                     <div className="block-content">
-                        <h1 className="display-5 text-uppercase py-5 text-center">
-                            puddinq.mobi
-                        </h1>
-                        <p>Puddinq.mobi is een Nederlandse online applicatie voor inzage in officiële open overheidsdata.
-                            De app geeft inzage in de ruimtelijke ordening op vlakken als kaarten, gebouw- en kadastergrenzen,
-                            bebouwingshoogten, gepubliceerde vergunningen en (historische) luchtfoto's.
+                        <h2 className="display-5 text-uppercase py-5 text-center">
+                            Puddinq.mobi
+                        </h2>
+                        <p>
+                            Deze website permanent beta status als speeltuin voor mijzelf en geïnteresseerden. Aan de
+                            inhoud van de website kunnen geen rechten worden verleend en er wordt gebuik gemaakt van
+                            functionele coockies om het gedrag te volgen en daarmee het gebruik te verbeteren.
                         </p>
                     </div>
                 </div>
@@ -24,39 +30,75 @@ const Home = () => {
                 <div className="col-lg">
                     <div className="block-content">
                         <h2 className="display-5 text-uppercase py-5 text-center">
-                            OpenData
+                            Vergunningen
                         </h2>
-                        <p>Open data is de gangbare term voor publiek beschikbare overheidsdata. Met name vanwege de
-                        wet openbaarheid van bestuur is hiermee de drempel weggenomen voor burgers om inzage te krijgen
-                        in verschillende bronnen zonder daar een aanvraag (WOB verzoek) voor te doen. Deze applicatie
-                        bundelt verschillende bronnen en vegroot daarme het gemak deze brommen te raadplegen.
+                        <p>Een onderdeel van deze app is de weergave van gepubliceerde vergunningen in de kaart. U hoeft
+                            niet de locale gemeente website of krant door te lopen of uw adres er tussen staat. U kan
+                            in een oogopslag zien welke vergunningen gepubliiceerd zijn in de directe omgeving van de
+                            zoekopdracht.
                         </p>
+                        <img src={permits} className="rounded img-fluid" alt="voorbeeld vergunningen" />
                     </div>
                 </div>
                 <div className="col-lg">
                     <div className="block-content">
                         <h2 className="display-5 text-uppercase py-5 text-center">
-                            Bronnen
+                            Hoogtes
                         </h2>
-                        <p>Puddinq maakt voornamelijk gebruik van de gegevens uit PDOK, maar ook van gegevens uit het
-                        kadaster en register voor gepubliceerde vergunningen.
-                        </p>
-
+                        <p>Met de hoogtekaart kan je snel afwijkingen zien in de omgeving. Deze informatielaag geeft snel </p>
+                        inzicht bij het overwegen van een opbouw door te vergelijken met de buren of in te schatten welke
+                        bouwwerken op een perceel staan.
+                        <img src={hights} className="rounded img-fluid" alt="voorbeeld hoogtes" />
                     </div>
                 </div>
                 <div className="col-lg">
                     <div className="block-content">
                         <h2 className="display-5 text-uppercase py-5 text-center">
-                            Non profit
+                            Kadaster
                         </h2>
-                        <p>Deze applicatie is een non profit initiatief vanuit mijn passie voor web applicaties, api's en
-                        ervaring met geo informatie. Het project is een oefenruimte voor werken met react en openlayers.
-                            De broncode is opensource maar maakt gebruik van enkele koppelingen (api's) die niet onder de
-                            opensource licentie vallen. Voor contact of info mail naar info@puddinq.mobi.
+                        <p>Het kadaster geeft de officiële grenzen aan van percelen. Met een grove benadering kan zo</p>
+                        snel worden gezien of bouwwerken op of over de grens staan van een perceel.
+                        <img src={kadaster} className="rounded img-fluid" alt="voorbeeld kadaster" />
+                    </div>
+                </div>
+                <div className="row">
+                <div className="col-lg">
+                    <div className="block-content">
+                        <h2 className="display-5 text-uppercase py-5 text-center">
+                            Panden
+                        </h2>
+                        <p>De laag met panden geeft de offieel geregistreerde bouwgrenzen weer. Deze komen grotendeels
+                            overeen met werkelijke bouwwerken. Maar het kan ook betekeninen dat er een bouwwerk toegestaan
+                        is maar (nog) niet daadwerkelijk geplaatst.</p>
+                        <img src={kadaster} className="rounded img-fluid" alt="voorbeeld panden" />
+                    </div>
+                </div>
+                <div className="col-lg">
+                    <div className="block-content">
+                        <h2 className="display-5 text-uppercase py-5 text-center">
+                            Combinatie 1
+                        </h2>
+                        <p>De kracht van deze applicatie komt het best tot recht bij de combinatie van lagen. Per laag kan
+                            ook de transparantie ingesteld worden om nuances nog scherper in beeld te brengen. (luchtfoto,
+                            gebouwgrens en bouwgrens)
                         </p>
+                        <img src={combinationOne} className="rounded img-fluid" alt="voorbeeld combinatie" />
+                    </div>
+                </div>
+                    <div className="col-lg">
+                        <div className="block-content">
+                            <h2 className="display-5 text-uppercase py-5 text-center">
+                                Combinatie 2
+                            </h2>
+                            <p>De hoogtekaart kan een logisch beeld geven voor de aanvraag van een opbouw binnen een perceel. (kadaster,
+                                bouwgrens, hoogtes en vergunningen)
+                            </p>
+                            <img src={combinationTwo} className="rounded img-fluid" alt="voorbeeld combinatie twee" />
+                        </div>
                     </div>
                 </div>
             </div>
+
         </MainContainer>
     )
 
@@ -68,6 +110,11 @@ export default Home;
 const MainContainer = styled.div`
 h2 {
     color: var(--black);
+}
+
+
+.row {
+    margin:0;
 }
 
 .block-content {
