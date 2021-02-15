@@ -127,7 +127,7 @@ const SidebarContainer = styled.div`
     position: relative;
     top: -35px;
     overflow-y: scroll;
-    height: 70vh;
+    height: 60vh;
 }
 .sidebar-content::-webkit-scrollbar {
     width: 6px;
@@ -198,6 +198,9 @@ const SidebarContainer = styled.div`
 @media (min-width: 1000px) {
     .nav-menu {
         left: -220px;
+    }
+    .sidebar-content {
+        height: 70vh;
     }
 }
 
