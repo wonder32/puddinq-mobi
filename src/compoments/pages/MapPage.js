@@ -5,6 +5,7 @@ import Map from "../Map/Map";
 import {osm} from "../Source";
 import {Layers, TileLayer, Aerial, Bing, Roads, Kadaster, Buildings, Permits, Popup} from "../Layers";
 import {Controls, FullScreenControl, GeoCoderControl} from "../Controls";
+import Helmet from "react-helmet";
 
 const MapPage = () => {
 
@@ -31,6 +32,18 @@ const MapPage = () => {
         <>
 
             <MapContainer>
+                <Helmet
+                    title="Puddinq.mobi - Map web applicatie"
+                    meta={[
+                        { property: "og:title", content: "Puddinq.mobi | applicatie" },
+                        { property: "description", content: "Web applicatie met publieke overheidsgegevens rond uw huis of bedrijf." },
+                        { property: "og:description", content: "Web applicatie met publieke overheidsgegevens rond uw huis of bedrijf." },
+                        { property: "og:type", content: "website" },
+                        { property: "og:url", content: "https://www.puddinq.mobi/map/" },
+                        { property: "og:image", content: "https://www.puddinq.mobi/combination-twee.png" },
+                        // Any other meta tags go here as objects or you can just add children directly inside this component.
+                    ]}
+                />
                 <Map center={center} zoom={zoom} rotation={rotation}>
 
                     <Layers>

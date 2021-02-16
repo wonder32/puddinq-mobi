@@ -6,11 +6,24 @@ import sidebarOut from "../../images/sidebar-out.PNG";
 import sidebarIn from "../../images/sidebar-in.PNG";
 import fullscreen from "../../images/fullscreen.PNG";
 import sharing from "../../images/sharing.PNG";
+import Helmet from "react-helmet";
 
 const Gebruik = () => {
 
     return (
         <GebruikContainer className="home-main-container container-fluid">
+            <Helmet
+                title="Puddinq.mobi - Handleiding web applicatie"
+                meta={[
+                    { property: "og:title", content: "Puddinq.mobi | handleiding voor gebruik van de puddinq applicatie" },
+                    { property: "description", content: "Beschrijving voor de kaart applicatie waarop per adres zaken als luchtfoto's, kadaster- en bouwgrenzen, hoogtes en vergunningen bekeken kunnen worden." },
+                    { property: "og:description", content: "Beschrijving voor de kaart applicatie waarop per adres zaken als luchtfoto's, kadaster- en bouwgrenzen, hoogtes en vergunningen bekeken kunnen worden." },
+                    { property: "og:type", content: "website" },
+                    { property: "og:url", content: "https://www.puddinq.mobi/handleiding/" },
+                    { property: "og:image", content: "https://www.puddinq.mobi/combination-twee.png" },
+                    // Any other meta tags go here as objects or you can just add children directly inside this component.
+                ]}
+            />
             <div className="row">
                 <div className="col-lg">
                     <div className="block-content">

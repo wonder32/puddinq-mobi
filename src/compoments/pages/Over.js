@@ -3,11 +3,24 @@ import styled from "styled-components";
 import luchtfoto from '../../images/luchtfoto.PNG';
 import panden from '../../images/panden.PNG';
 import permits from "../../images/vergunningen.PNG";
+import Helmet from "react-helmet";
 
 const Over = () => {
 
     return (
         <OverContainer className="home-main-container container-fluid">
+            <Helmet
+                title="Puddinq.mobi - Over de web applicatie"
+                meta={[
+                    { property: "og:title", content: "Puddinq.mobi | over de puddinq applicatie" },
+                    { property: "description", content: "Deze website permanent beta status als speeltuin voor mijzelf en geïnteresseerden." },
+                    { property: "og:description", content: "Deze website permanent beta status als speeltuin voor mijzelf en geïnteresseerden." },
+                    { property: "og:type", content: "website" },
+                    { property: "og:url", content: "https://www.puddinq.mobi/over/" },
+                    { property: "og:image", content: "https://www.puddinq.mobi/combination-twee.png" },
+                    // Any other meta tags go here as objects or you can just add children directly inside this component.
+                ]}
+            />
             <div className="row">
                 <div className="col-lg">
                     <div className="block-content">

@@ -5,19 +5,30 @@ import combinationTwo from '../../images/combinatie-twee.PNG';
 import kadaster from '../../images/kadaster.PNG';
 import hights from '../../images/hoogtes.PNG';
 import permits from '../../images/vergunningen.PNG';
-
+import Helmet from "react-helmet";
 
 const Home = () => {
 
     return (
         <MainContainer className="home-main-container">
-
+            <Helmet
+                title="Puddinq.mobi - Home"
+                meta={[
+                    { property: "og:title", content: "Puddinq.mobi | geografische OpenData van kadaster tot vergunning" },
+                    { property: "description", content: "Kaart applicatie waarop per adres zaken als luchtfoto's, kadaster- en bouwgrenzen, hoogtes en vergunningen bekeken kunnen worden." },
+                    { property: "og:description", content: "Kaart applicatie waarop per adres zaken als luchtfoto's, kadaster- en bouwgrenzen, hoogtes en vergunningen bekeken kunnen worden." },
+                    { property: "og:type", content: "website" },
+                    { property: "og:url", content: "https://www.puddinq.mobi" },
+                    { property: "og:image", content: "https://www.puddinq.mobi/combination-twee.png" },
+                    // Any other meta tags go here as objects or you can just add children directly inside this component.
+                ]}
+            />
             <div className="row">
                 <div className="col-lg">
                     <div className="block-content">
-                        <h2 className="display-5 text-uppercase py-5 text-center">
+                        <h1 className="display-5 text-uppercase py-5 text-center">
                             Puddinq.mobi
-                        </h2>
+                        </h1>
                         <p>
                             Deze website permanent beta status als speeltuin voor mijzelf en geïnteresseerden. Aan de
                             inhoud van de website kunnen geen rechten worden verleend en er wordt gebuik gemaakt van

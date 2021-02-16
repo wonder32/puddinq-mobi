@@ -1,9 +1,8 @@
 {
   "name": "puddinq-mobi",
-  "homepage": ".",
+  "homepage": "http://test.wordpress.nl",
   "version": "2.0.0",
   "private": true,
-  "homepage": "http://test.wordpress.nl",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
@@ -15,6 +14,7 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
     "react-icons": "^4.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
