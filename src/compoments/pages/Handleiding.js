@@ -6,11 +6,12 @@ import sidebarOut from "../../images/sidebar-out.PNG";
 import sidebarIn from "../../images/sidebar-in.PNG";
 import fullscreen from "../../images/fullscreen.PNG";
 import sharing from "../../images/sharing.PNG";
-import Helmet from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Gebruik = () => {
 
     return (
+        <HelmetProvider>
         <GebruikContainer className="home-main-container container-fluid">
             <Helmet
                 title="Puddinq.mobi - Handleiding web applicatie"
@@ -111,6 +112,7 @@ const Gebruik = () => {
             </div>
 
         </GebruikContainer>
+            </HelmetProvider>
     )
 
 }

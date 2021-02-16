@@ -38,13 +38,13 @@ const Popup = ({ zIndex = 0 }) => {
                 let geometry = features[0].getGeometry();
                 let coordinates = geometry.getCoordinates();
 
-                let content = '<b>' + features[0].get('overheid') + '</b><br>' + features[0].get('onderwerp') + '<br>';
+                let content = "<b>{features[0].get('overheid')}</b><br>{features[0].get('onderwerp')}<br>";
                 content += features[0].get('titel');
                 content += ' <a href="' + features[0].get('url') + '" target="_blank">bekijk</a>';
                 if (features.length > 1) {
                     content += '<br><br><b>Andere vergunningen hier</b><br>';
                     for (let i = 1; i < features.length; i++) {
-                        content += features[i].get('onderwerp') + ' <a href="' + features[i].get('url') + '" target="_blank">bekijk</a>' + '<br>';
+                        content += "{features[i].get('onderwerp')} <a href=\"{features[i].get('url')}\" target=\"_blank\">bekijk</a><br>";
                         console.log(features[i]);
                     }
                 }

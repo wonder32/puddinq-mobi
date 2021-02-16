@@ -3,11 +3,12 @@ import styled from "styled-components";
 import luchtfoto from '../../images/luchtfoto.PNG';
 import panden from '../../images/panden.PNG';
 import permits from "../../images/vergunningen.PNG";
-import Helmet from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Over = () => {
 
     return (
+        <HelmetProvider>
         <OverContainer className="home-main-container container-fluid">
             <Helmet
                 title="Puddinq.mobi - Over de web applicatie"
@@ -72,6 +73,7 @@ const Over = () => {
             </div>
 
         </OverContainer>
+            </HelmetProvider>
     )
 
 }

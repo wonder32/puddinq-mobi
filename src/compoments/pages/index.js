@@ -5,11 +5,12 @@ import combinationTwo from '../../images/combinatie-twee.PNG';
 import kadaster from '../../images/kadaster.PNG';
 import hights from '../../images/hoogtes.PNG';
 import permits from '../../images/vergunningen.PNG';
-import Helmet from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const Home = () => {
 
     return (
+        <HelmetProvider>
         <MainContainer className="home-main-container">
             <Helmet
                 title="Puddinq.mobi - Home"
@@ -109,8 +110,8 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-
         </MainContainer>
+        </HelmetProvider>
     )
 
 }

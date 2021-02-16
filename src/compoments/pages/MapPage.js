@@ -5,7 +5,7 @@ import Map from "../Map/Map";
 import {osm} from "../Source";
 import {Layers, TileLayer, Aerial, Bing, Roads, Kadaster, Buildings, Permits, Popup} from "../Layers";
 import {Controls, FullScreenControl, GeoCoderControl} from "../Controls";
-import Helmet from "react-helmet";
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 
 const MapPage = () => {
 
@@ -30,7 +30,7 @@ const MapPage = () => {
 
     return (
         <>
-
+            <HelmetProvider>
             <MapContainer>
                 <Helmet
                     title="Puddinq.mobi - Map web applicatie"
@@ -177,6 +177,7 @@ const MapPage = () => {
                     </Controls>
                 </Map>
             </MapContainer>
+                </HelmetProvider>
         </>
     )
 
