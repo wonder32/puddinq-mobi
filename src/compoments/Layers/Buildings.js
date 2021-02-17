@@ -26,15 +26,30 @@ const Buildings = ({ zIndex = 0 }) => {
                 },
                 strategy: bboxStrategy
             }),
-            style: new Style({
-                stroke: new Stroke({
-                    color: 'black',
-                    width: 2
-                }),
-                fill: new Fill({
-                    color: 'rgba(255, 0, 0, 0.2)'
-                })
-            }),
+            style: function(feature) {
+
+                let color;
+
+                if (feature.get('gebruiksdoel') === 'woonfunctie') {
+                    color = 'rgba(42, 187, 155, 0.5)';
+                } else if (feature.get('gebruiksdoel') === 'kantoorfunctie') {
+                    color = 'rgba(190, 144, 212, 0.2)';
+                } else {
+                    color = 'rgba(255, 0, 0, 0.2)';
+                }
+
+                return [
+                    new Style({
+                        stroke: new Stroke({
+                            color: 'black',
+                            width: 2
+                        }),
+                        fill: new Fill({
+                            color: color
+                        })
+                    })
+                ]
+            },
             visible: false
         });
 

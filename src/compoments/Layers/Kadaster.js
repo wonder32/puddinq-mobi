@@ -4,7 +4,7 @@ import GeoJSON from "ol/format/GeoJSON";
 import {bbox as bboxStrategy} from "ol/loadingstrategy";
 import VectorSource from "ol/source/Vector";
 import {Vector as VectorLayer} from "ol/layer";
-import {Stroke, Style} from "ol/style";
+import {Fill, Stroke, Style} from "ol/style";
 
 
 
@@ -22,7 +22,7 @@ const Kadaster = ({ zIndex = 0 }) => {
                 format: new GeoJSON(),
                 url: function(extent) {
                     return 'https://geodata.nationaalgeoregister.nl/kadastralekaart/wfs/v4_0?request=GetFeature' +
-                        '&service=WFS&service=WFS&version=1.1.0&typeName=kadastralekaartv4:kadastralegrens&outputFormat=application/json' +
+                        '&service=WFS&version=2.0.0&typeName=kadastralekaartv4:perceel&outputFormat=application/json' +
                         '&srsname=EPSG:3857&bbox=' + extent.join(',') + ',EPSG:3857';
                 },
                 strategy: bboxStrategy
@@ -31,6 +31,9 @@ const Kadaster = ({ zIndex = 0 }) => {
                 stroke: new Stroke({
                     color: 'black',
                     width: 2
+                }),
+                fill: new Fill({
+                    color: 'rgba(255, 0, 0, 0.0)'
                 })
             }),
             visible: false

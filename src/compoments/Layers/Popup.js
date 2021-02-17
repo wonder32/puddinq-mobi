@@ -29,29 +29,59 @@ const Popup = ({ zIndex = 0 }) => {
         map.addOverlay(overlay);
 
         map.on('click', function(evt) {
-            let features = [];
+            let coordinates = evt.coordinate;
+            let features = {};
+
             map.forEachFeatureAtPixel(evt.pixel,
                 function(feature, layer) {
-                    features.push(feature);
+                    features[layer.get('name')] = features[layer.get('name')] || [];
+                    features[layer.get('name')].push(feature);
             });
-            if (features.length > 0) {
-                let geometry = features[0].getGeometry();
-                let coordinates = geometry.getCoordinates();
 
-                let content = "<b>{features[0].get('overheid')}</b><br>{features[0].get('onderwerp')}<br>";
-                content += features[0].get('titel');
-                content += ' <a href="' + features[0].get('url') + '" target="_blank">bekijk</a>';
-                if (features.length > 1) {
+            // vergunningen
+            if (features["Vergunningen"] && features["Vergunningen"].length > 0) {
+
+                let feature = features["Vergunningen"]["0"];
+                let content = "<b>" + feature.get('overheid') + "</b><br>" + feature.get('onderwerp') + "<br>";
+                content += feature.get('titel');
+                content += ' <a href="' + feature.get('url') + '" target="_blank">bekijk</a>';
+                if (features["Vergunningen"].length > 1) {
                     content += '<br><br><b>Andere vergunningen hier</b><br>';
                     for (let i = 1; i < features.length; i++) {
-                        content += "{features[i].get('onderwerp')} <a href=\"{features[i].get('url')}\" target=\"_blank\">bekijk</a><br>";
+                        content += features[i].get('onderwerp') + " <a href='" + features[i].get('url') + "' target='_blank'>bekijk</a><br>";
                         console.log(features[i]);
                     }
                 }
 
                 content_element.innerHTML = content;
                 overlay.setPosition(coordinates);
-                console.table(features);
+
+            } else
+            if (features["Panden"] && features["Panden"].length > 0) {
+                let feature = features["Panden"]["0"];
+
+                let content = "<b>" + feature.get('aantal_verblijfsobjecten') + " x " + feature.get('gebruiksdoel') + "</b><br>";
+                content += "Bouwjaar: " + feature.get('bouwjaar') + "<br>";
+                content += "Gebruiksdoel: " + feature.get('gebruiksdoel') + "<br>";
+                content += "Gid: " + feature.get('gid') + "<br>";
+                content += "Min oppervlakte: " + feature.get('oppervlakte_max') + " m2<br>";
+                content += "Max oppervlakte: " + feature.get('oppervlakte_min') + " m2<br>";
+                content += "Status: " + feature.get('status') + "<br>";
+                content += ' <a href="' + feature.get('rdf_seealso') + '" target="_blank">bekijk</a>';
+
+                content_element.innerHTML = content;
+                overlay.setPosition(coordinates);
+
+            } else
+            if (features["Kadaster"] && features["Kadaster"].length > 0) {
+                let feature = features["Kadaster"]["0"];
+                console.log(feature);
+                let content = "<b>Perceel in " + feature.get('kadastraleGemeenteWaarde') + "</b><br>";
+                content += "Grootte: " + feature.get('kadastraleGrootteWaarde') + " m2<br>";
+
+                content_element.innerHTML = content;
+                overlay.setPosition(coordinates);
+
             }
         });
 
