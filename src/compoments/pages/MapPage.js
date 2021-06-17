@@ -43,7 +43,9 @@ const MapPage = () => {
                         { property: "og:image", content: "https://www.puddinq.mobi/combination-twee.png" },
                         // Any other meta tags go here as objects or you can just add children directly inside this component.
                     ]}
-                />
+                >
+                    <link rel="canonical" href="https://www.puddinq.mobi/map/" />
+                </Helmet>
                 <Map center={center} zoom={zoom} rotation={rotation}>
 
                     <Layers>

@@ -7,7 +7,13 @@ import MapPage from './compoments/pages/MapPage';
 import Over from './compoments/pages/Over';
 import Handleiding from './compoments/pages/Handleiding';
 import Navigation from "./compoments/layouts/Navigation";
+import TagManager from 'react-gtm-module'
 
+const tagManagerArgs = {
+    gtmId: 'GTM-K4C9PQ'
+}
+
+TagManager.initialize(tagManagerArgs);
 
 class App extends React.Component {
     render() {
