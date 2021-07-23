@@ -56,90 +56,61 @@ const MapPage = () => {
                             zIndex={0}
                         />
                         <Aerial
-                            name='Infrarood 2016'
-                            description='PDOK luchtfotos infrarood 2016'
-                            zIndex={1}
-                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/infrarood/wms'
-                            service='WMS'
-                            request='GetMap'
-                            layers='2016_ortho25IR'
-                            srs='EPSG:3857'
-                        />
-                        <Aerial
                             name='Luchtfoto 2016'
                             description='PDOK luchtfotos rgb 2016'
                             zIndex={2}
-                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wms'
+                            url='https://service.pdok.nl/hwh/luchtfotorgb/wms/v1_0'
                             service='WMS'
                             request='GetMap'
                             layers='2016_ortho25'
                             srs='EPSG:3857'
                         />
-                        <Aerial
-                            name='Infrarood 2017'
-                            description='PDOK luchtfotos infrarood 2017'
-                            zIndex={3}
-                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/infrarood/wms'
-                            service='WMS'
-                            request='GetMap'
-                            layers='2017_ortho25IR'
-                            srs='EPSG:3857'
-                        />
+                        {/*https://service.pdok.nl/hwh/luchtfotorgb/wms/v1_0?&request=GetCapabilities&service=wms*/}
                         <Aerial
                             name='Luchtfoto 2017'
                             description='PDOK luchtfotos rgb 2017'
                             zIndex={4}
-                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wms'
+                            url='https://service.pdok.nl/hwh/luchtfotorgb/wms/v1_0'
                             service='WMS'
                             request='GetMap'
                             layers='2017_ortho25'
                             srs='EPSG:3857'
                         />
                         <Aerial
-                            name='Infrarood 2018'
-                            description='PDOK luchtfotos infrarood 2018'
-                            zIndex={5}
-                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/infrarood/wms'
-                            service='WMS'
-                            request='GetMap'
-                            layers='2018_ortho25IR'
-                            srs='EPSG:3857'
-                        />
-                        <Aerial
                             name='Luchtfoto 2018'
                             description='PDOK luchtfotos rgb 2018'
                             zIndex={6}
-                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wms'
+                            url='https://service.pdok.nl/hwh/luchtfotorgb/wms/v1_0'
                             service='WMS'
                             request='GetMap'
                             layers='2018_ortho25'
                             srs='EPSG:3857'
                         />
                         <Aerial
-                            name='Infrarood 2019'
-                            description='PDOK luchtfotos infrarood 2019'
-                            zIndex={7}
-                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/infrarood/wms'
-                            service='WMS'
-                            request='GetMap'
-                            layers='2019_ortho25IR'
-                            srs='EPSG:3857'
-                        />
-                        <Aerial
                             name='Luchtfoto 2019'
                             description='PDOK luchtfotos rgb 2019'
                             zIndex={8}
-                            url='https://geodata.nationaalgeoregister.nl/luchtfoto/rgb/wms'
+                            url='https://service.pdok.nl/hwh/luchtfotorgb/wms/v1_0'
                             service='WMS'
                             request='GetMap'
                             layers='2019_ortho25'
                             srs='EPSG:3857'
                         />
                         <Aerial
+                            name='Luchtfoto 2020'
+                            description='PDOK luchtfotos rgb 2020'
+                            zIndex={9}
+                            url='https://service.pdok.nl/hwh/luchtfotorgb/wms/v1_0'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2020_ortho25'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
                             name='Hoogtes 0.5m/px'
                             description='0.5 meter per pixel'
                             zIndex={10}
-                            url='https://geodata.nationaalgeoregister.nl/ahn3/wms'
+                            url='https://geodata.nationaalgeoregister.nl/ahn3/wms/v1_0'
                             service='WMS'
                             request='GetMap'
                             layers='ahn3_05m_dsm'
@@ -149,23 +120,23 @@ const MapPage = () => {
                             name='Hoogtes 5m/px'
                             description='5 meter per pixel'
                             zIndex={11}
-                            url='https://geodata.nationaalgeoregister.nl/ahn1/wms'
+                            url='https://geodata.nationaalgeoregister.nl/ahn1/wms/v1_0'
                             service='WMS'
                             request='GetMap'
                             layers='ahn1_5m'
                             srs='EPSG:3857'
                         />
                         <Bing
-                            zIndex={11}
+                            zIndex={12}
                         />
                         <Roads
-                            zIndex={12}
-                            />
-                        <Kadaster
                             zIndex={13}
                             />
-                        <Buildings
+                        <Kadaster
                             zIndex={14}
+                            />
+                        <Buildings
+                            zIndex={15}
                             />
                         <Permits
                             zIndex={15}
