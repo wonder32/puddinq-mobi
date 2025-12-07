@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Sidebar from "../layouts/Sidebar";
 import Map from "../Map/Map";
 import {osm} from "../Source";
-import {Layers, TileLayer, Aerial, Bing, Roads, Kadaster, Buildings, Permits, Popup} from "../Layers";
+import {Layers, TileLayer, Aerial, Roads, Kadaster, Buildings, Permits, Popup} from "../Layers";
 import {Controls, FullScreenControl, GeoCoderControl} from "../Controls";
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 
@@ -107,9 +107,49 @@ const MapPage = () => {
                             srs='EPSG:3857'
                         />
                         <Aerial
+                            name='Luchtfoto 2022'
+                            description='PDOK luchtfotos rgb 2022'
+                            zIndex={11}
+                            url='https://service.pdok.nl/hwh/luchtfotorgb/wms/v1_0'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2022_ortho25'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
+                            name='Luchtfoto 2023'
+                            description='PDOK luchtfotos rgb 2023'
+                            zIndex={12}
+                            url='https://service.pdok.nl/hwh/luchtfotorgb/wms/v1_0'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2023_ortho25'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
+                            name='Luchtfoto 2024'
+                            description='PDOK luchtfotos rgb 2024'
+                            zIndex={13}
+                            url='https://service.pdok.nl/hwh/luchtfotorgb/wms/v1_0'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2024_ortho25'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
+                            name='Luchtfoto 2025'
+                            description='PDOK luchtfotos rgb 2025'
+                            zIndex={14}
+                            url='https://service.pdok.nl/hwh/luchtfotorgb/wms/v1_0'
+                            service='WMS'
+                            request='GetMap'
+                            layers='2025_ortho25'
+                            srs='EPSG:3857'
+                        />
+                        <Aerial
                             name='Hoogtes 0.5m/px'
                             description='0.5 meter per pixel'
-                            zIndex={10}
+                            zIndex={15}
                             url='https://geodata.nationaalgeoregister.nl/ahn3/wms/v1_0'
                             service='WMS'
                             request='GetMap'
@@ -119,27 +159,24 @@ const MapPage = () => {
                         <Aerial
                             name='Hoogtes 5m/px'
                             description='5 meter per pixel'
-                            zIndex={11}
+                            zIndex={16}
                             url='https://geodata.nationaalgeoregister.nl/ahn1/wms/v1_0'
                             service='WMS'
                             request='GetMap'
                             layers='ahn1_5m'
                             srs='EPSG:3857'
                         />
-                        <Bing
-                            zIndex={12}
-                        />
                         <Roads
-                            zIndex={13}
+                            zIndex={17}
                             />
                         <Kadaster
-                            zIndex={14}
+                            zIndex={18}
                             />
                         <Buildings
-                            zIndex={15}
+                            zIndex={19}
                             />
                         <Permits
-                            zIndex={15}
+                            zIndex={20}
                         />
                         <Popup />
                     </Layers>
