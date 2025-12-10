@@ -20,7 +20,7 @@ const Roads = ({ zIndex = 0 }) => {
             source: new VectorSource({
                 format: new GeoJSON(),
                 url: function(extent) {
-                    return 'https://geodata.nationaalgeoregister.nl/nwbwegen/wfs?' +
+                    return 'https://service.pdok.nl/rws/nwbwegen/wfs/v1_0?' +
                         'version=2.0.0&service=WFS&request=GetFeature&typename=wegvakken' +
                         '&outputFormat=application/json&srsname=EPSG:3857&' +
                         'bbox=' + extent.join(',') + ',EPSG:3857';
