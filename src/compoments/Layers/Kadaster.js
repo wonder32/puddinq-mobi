@@ -21,10 +21,10 @@ const Kadaster = ({ zIndex = 0 }) => {
             source: new VectorSource({
                 format: new GeoJSON(),
                 url: function(extent) {
-                    return 'https://geodata.nationaalgeoregister.nl/kadastralekaart/wfs/v4_0?request=GetFeature' +
-                        '&service=WFS&version=2.0.0&typeName=kadastralekaartv4:perceel&outputFormat=application/json' +
-                        '&srsname=EPSG:3857&bbox=' + extent.join(',') + ',EPSG:3857';
-                },
+    return 'https://service.pdok.nl/kadaster/kadastralekaart/wfs/v5_0?request=GetFeature' +
+        '&service=WFS&version=2.0.0&typeName=kadastralekaartv5:perceel&outputFormat=application/json' +
+        '&srsname=EPSG:3857&bbox=' + extent.join(',') + ',EPSG:3857';
+},
                 strategy: bboxStrategy
             }),
             style: new Style({

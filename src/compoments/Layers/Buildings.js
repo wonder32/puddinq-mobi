@@ -19,10 +19,9 @@ const Buildings = ({ zIndex = 0 }) => {
             source: new VectorSource({
                 format: new GeoJSON(),
                 url: function(extent) {
-                    return 'https://geodata.nationaalgeoregister.nl/bag/wfs/v1_1?' +
-                        'request=GetFeature&service=wfs&version=2.0.0&typename=pand' +
-                        '&outputFormat=application/json&srsname=EPSG:3857&' +
-                        'bbox=' + extent.join(',') + ',EPSG:3857';
+                    return 'https://service.pdok.nl/lv/bag/wfs/v2_0?request=GetFeature' +
+                        '&service=WFS&version=2.0.0&typeName=bag:pand&outputFormat=application/json' + // Let op de wijziging naar bag:pand
+                        '&srsname=EPSG:3857&bbox=' + extent.join(',') + ',EPSG:3857';
                 },
                 strategy: bboxStrategy
             }),
