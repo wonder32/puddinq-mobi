@@ -150,20 +150,20 @@ const MapPage = () => {
                             name='Hoogtes 0.5m/px'
                             description='0.5 meter per pixel'
                             zIndex={15}
-                            url='https://geodata.nationaalgeoregister.nl/ahn3/wms/v1_0'
+                            url='https://service.pdok.nl/rws/ahn/wms/v1_0'
                             service='WMS'
                             request='GetMap'
-                            layers='ahn3_05m_dsm'
+                            layers='dsm_05m'
                             srs='EPSG:3857'
                         />
                         <Aerial
                             name='Hoogtes 5m/px'
                             description='5 meter per pixel'
                             zIndex={16}
-                            url='https://geodata.nationaalgeoregister.nl/ahn1/wms/v1_0'
+                            url='https://service.pdok.nl/rws/ahn/wms/v1_0'
                             service='WMS'
                             request='GetMap'
-                            layers='ahn1_5m'
+                            layers='dtm_05m'
                             srs='EPSG:3857'
                         />
                         <Roads

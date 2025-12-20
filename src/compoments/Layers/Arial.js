@@ -23,7 +23,8 @@ const Aerial = ({ zIndex = 0, url, service, request, layers, srs, name, descript
                     'service' : service,
                     'request' : request,
                     'layers' : layers,
-                    'srs': srs
+                    'srs': srs,
+                    'crs': srs
                 }
             }),
             visible: false
